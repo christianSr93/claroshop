@@ -1,0 +1,16 @@
+.videoPlayer{
+    background-image: url('../../../assets/img/background.jpg');
+}
+
+.videoOptions{
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    .title{
+
+    }
+    .options{
+        display: flex;
+        justify-content: center;
+    }
+}
