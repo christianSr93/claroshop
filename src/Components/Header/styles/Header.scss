@@ -1,0 +1,21 @@
+.header{
+    background-color: black;
+    border-bottom: solid red 3px;
+    display: flex;
+
+    .sochiLogo{
+        width: 50%;
+        display: flex;
+        img{
+            margin-left: 15%;
+        }
+    }
+    .claroLogo{
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        img{
+            margin-right: 15%;
+        }
+    }
+}
