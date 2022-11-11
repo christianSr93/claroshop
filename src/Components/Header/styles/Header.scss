@@ -1,13 +1,21 @@
+@import '../../../global.scss';
+
 .header{
     background-color: black;
-    border-bottom: solid red 3px;
+    border-bottom: solid #F12100 3px;
     display: flex;
+    position: sticky;
+    width: 100%;
+    top: 0;
 
     .sochiLogo{
         width: 50%;
         display: flex;
         img{
             margin-left: 15%;
+            @include sm {
+                margin-left: 0;
+            }
         }
     }
     .claroLogo{
@@ -16,6 +24,9 @@
         justify-content: flex-end;
         img{
             margin-right: 15%;
+            @include sm {
+                margin-right: 0;
+            }
         }
     }
 }
