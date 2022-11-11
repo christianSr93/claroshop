@@ -1,0 +1,21 @@
+.counterContainer{
+    display: flex;
+    color: white;
+    justify-content: center;
+    padding: 10px;
+    flex-direction: column;
+    .items{
+        display: flex;
+        justify-content: center;
+        .counterItem{
+            display: flex;
+            flex-direction: column;
+            border-radius: 31px;
+            border: solid 1px white;
+            width: 60px;
+            height: 60px;
+            justify-content: center;
+            margin: 5px;
+        }
+    }
+}
