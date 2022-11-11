@@ -1,7 +1,7 @@
 # Instrucciones
 - Clonar el proyecto en una carpeta local con el siguiente comando
 ```bash
-git clone git@github.com:christianSr93/HP_Test.git
+git clone https://github.com/christianSr93/claroshop.git
 ```
 - Descargar e instalar node y npm utilizando el siguiente link
 ```bash
