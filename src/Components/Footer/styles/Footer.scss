@@ -1,0 +1,29 @@
+@import '../../../global.scss';
+
+.footer{
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    .privacy{
+        span{
+            font-size: small;
+            @include sm {
+                font-size: x-small;
+            }
+        }
+    }
+    .socialMedia{
+        img{
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            @include sm {
+                margin: 1px;
+            }
+        }
+    }
+}
