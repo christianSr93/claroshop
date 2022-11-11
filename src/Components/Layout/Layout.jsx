@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles/Layout.scss";
 import teamLatam from "../../assets/img/team-latam.png";
 import experiencia from "../../assets/img/experiencia.png";
 import velocidad from "../../assets/img/velocidad-riesgo.png";
 import meets from "../../assets/img/travel-meets-fashion.png";
+import useLayout from "./hooks/useLayout";
+import Counter from "../Counter/Counter";
 
 const VIDEOS = [
   {
@@ -20,7 +22,7 @@ const VIDEOS = [
   },
   {
     title: "VELOCIDAD Y RIESGO",
-    video: "https://www.youtube.com/embed/rzj4FFi7wt8",
+    video: "https://www.youtube.com/embed/owGHU-F0EfY",
     img: velocidad,
     text: "Los Deportistas latinoamericanos que participan en Sochi 2014",
   },
@@ -32,29 +34,20 @@ const VIDEOS = [
   },
 ];
 export default function Layout() {
-  const [video, setVideo] = useState({
-    title: "TEAM LATAM",
-    video: "https://www.youtube.com/embed/ajum_1JxdbE",
-    img: teamLatam,
-    text: "Los Deportistas latinoamericanos que participan en Sochi 2014",
-  });
-
-  const handleVideo = (item) => {
-    setVideo(item);
-    console.log(item);
-  };
+  const { video, handleVideo } = useLayout(VIDEOS[0]);
 
   return (
     <>
       <div className="videoPlayer">
+        <Counter countDownDate={'12/01/2022 00:00:00'}></Counter>
         <iframe
           width="560"
           height="315"
-          src={video.video}
+          src={`${video.video}?autoplay=1&mute=1`}
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
       <div className="videoOptions">
@@ -63,10 +56,21 @@ export default function Layout() {
         </div>
         <div className="options">
           {VIDEOS.map((e) => (
-            <div>
-              <img onClick={() => handleVideo(e)} src={e.img} alt="Logo" />
-              <span> {e.title} </span>
-            </div>
+              e.title === video.title ? (
+                <div className="circleContainer">
+                  <div className="circle selected">
+                    <span> {e.text} </span>
+                  </div>
+                  <span> {e.title} </span>
+                </div>
+              ) : (
+                <div className="circleContainer">
+                  <div className="circle">
+                    <img onClick={() => handleVideo(e)} src={e.img} alt="Logo" />
+                  </div>
+                  <span> {e.title} </span>
+                </div>
+              )
           ))}
         </div>
       </div>
