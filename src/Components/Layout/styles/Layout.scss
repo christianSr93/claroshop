@@ -1,16 +1,60 @@
+@import '../../../global.scss';
+
 .videoPlayer{
     background-image: url('../../../assets/img/background.jpg');
+    iframe{
+        margin-bottom: 40px;
+        @include sm {
+            width: 100%;
+        }
+    }
 }
 
 .videoOptions{
-    background-color: gray;
+    background-color: #232323;
     display: flex;
     flex-direction: column;
-    .title{
-
-    }
+    color: white;
     .options{
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+        margin-bottom: 7%;
+        @include sm {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .circleContainer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            .circle{
+                border-radius: 100px;
+                width: 175px;
+                height: 175px;
+                img{
+                    width: 175px;
+                    height: 175px;
+                }
+                @include sm {
+                    width: 150px;
+                    height: 150px;
+                    img{
+                        width: 150px;
+                        height: 150px;
+                    }
+                }
+                &.selected{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #E82100;
+                    span{
+                        width: 75%;
+                    }
+                }
+            }
+        }
     }
 }
